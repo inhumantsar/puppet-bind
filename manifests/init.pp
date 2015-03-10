@@ -43,6 +43,17 @@
 #   }
 # }
 #
-class bind {
-    include ::bind::base
+class bind 
+(
+  $package_name     = $::bind::params::package_name,
+  $service_name     = $::bind::params::service_name,
+  $service_restart  = $::bind::params::manage_service,
+) inherits ::bind::params {
+  class { '::bind::package' : package_name  => $package_name }
+  class { '::bind::service' : 
+    service_name      => $service_name,
+    service_restart   => $service_restart,
+  }
+
+  contain ::bind::conf
 }

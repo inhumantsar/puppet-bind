@@ -1,3 +1,13 @@
+# HACKALERT
+
+I really like the way thias/bind handled named.conf. I also really like the way 
+camptocamp/bind used resources for record management. Can't use them both so I 
+smooshed them together.
+
+There aren't too many changes to what either did separately. I've tweaked some
+variable and parameter names to match up with conventions. Check out params.pp
+and conf.pp for available conf file params and defaults.
+
 # Bind module for Puppet
 
 [![Puppet Forge](http://img.shields.io/puppetforge/v/camptocamp/bind.svg)](https://forge.puppetlabs.com/camptocamp/bind)
